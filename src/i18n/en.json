@@ -1,0 +1,50 @@
+{
+  "code": "en", "short": "EN", "name": "English", "og": "en_US", "dir": "en/",
+  "slugs": { "support": "support", "privacy": "privacy" },
+  "nav": { "game": "The game", "coast": "Coast", "collection": "Collection", "support": "Support", "privacy": "Privacy", "download": "Download", "home": "Home", "language": "Language", "skip": "Skip to content" },
+  "home": {
+    "title": "Maré Alta · As far as the sun allows",
+    "description": "A jangada sailing game for iPhone: sail Brazil's northeastern coast, collect shells and go as far as the sun allows. Free to play.",
+    "tagline": "As far as the sun allows.",
+    "cta": "Download on the App Store", "badge": "iPhone · iOS",
+    "game": { "eyebrow": "The game", "title": "The scenery is the game.", "text": "Just distance, shells, the sun as a clock, and the pause. A shark fin shows up ahead as a warning.", "alt": "A run in progress", "hint": "Played with the iPhone in landscape" },
+    "landing": { "title": "Every landing counts.", "cards": [
+      { "img": "perfeito", "title": "Perfect!", "text": "The most rewarding moment: splash, sparkle and combo. It lines up with the landing haptics." },
+      { "img": "por-um-fio", "title": "Close call!", "text": "Bonus for skimming past the shark; the buoy winds the sun's clock back." },
+      { "img": "trombada", "title": "Crash!", "text": "A clear but comical hit: coral border, the jangada wobbles, you lose seconds of sun." } ] },
+    "coast": { "eyebrow": "Coast map", "title": "From Porto de Galinhas to Jericoacoara.", "alt": "Coast map", "stops": ["Porto de Galinhas", "Olinda", "Itamaracá", "Pipa", "Jericoacoara"] },
+    "collection": { "eyebrow": "Collection and shop", "title": "Sails and jangadas.", "text": "Earned ones in colour; locked ones as silhouettes, showing whether they unlock with shells or in the shop.", "alt": "Collection", "freeTitle": "Free to play.", "freeText": "You only pay if you want a sail or jangada skin. Nothing changes in the run.", "tag": "Optional skins" },
+    "end": { "eyebrow": "The sun has set", "title": "Play again.", "text": "\"Play again\" takes centre stage; +10 s of sun and double shells as options; share.", "alt": "End of a run" },
+    "footer": { "title": "Can you go farther?", "icon": "Maré Alta icon" }
+  },
+  "support": {
+    "title": "Support · Maré Alta", "description": "Help with Maré Alta: purchases, ads, language, sound and Game Center.",
+    "h1": "Support", "sub": "Questions about the game, purchases and settings.",
+    "faq": [
+      { "q": "How do I restore the Jangadeiro Pass?", "a": "Open Settings and tap Restore purchases, using the same Apple ID as the purchase. The pass is a one-time purchase and comes back without charging you again." },
+      { "q": "What does the Jangadeiro Pass include?", "a": "No ads between runs, +10 s of sun without watching an ad, and double shells without an ad." },
+      { "q": "Are ads mandatory?", "a": "Rewarded ads are always optional: at the end of a run you choose whether you want +10 s of sun or double shells. \"Play again\" stays the main button." },
+      { "q": "How do I change the language?", "a": "In Settings, choose Português or English." },
+      { "q": "How do I turn off sound, music or haptics?", "a": "Settings has one switch for Sound effects, one for Music and one for Haptics." },
+      { "q": "How do I connect to Game Center?", "a": "In Settings, tap Game Center. The connection uses your Apple account." },
+      { "q": "Where are my sails and jangadas?", "a": "In the Collection. Earned ones show in colour; locked ones show as silhouettes, indicating whether they unlock with shells or in the shop." }
+    ],
+    "contactTitle": "Get in touch", "contactText": "Tell us your iPhone model, your iOS version and what happened. A screenshot helps.",
+    "email": "Send email", "subject": "Maré Alta · Support"
+  },
+  "privacy": {
+    "title": "Privacy · Maré Alta", "description": "Maré Alta privacy policy: no account, no login, progress stays on your iPhone.",
+    "h1": "Privacy", "sub": "Updated September 2026.",
+    "intro": "Maré Alta doesn't ask for an account, an email or a login. Your progress is stored on the iPhone itself.",
+    "sections": [
+      { "t": "What stays on the device", "p": "Distance, best run, shells, coast stretches, collection and settings (language, sound, music, haptics) are saved locally on the iPhone. If you delete the app, that data is deleted with it." },
+      { "t": "Game Center", "p": "If you connect Game Center in Settings, Apple receives your best run for leaderboards and achievements, under Apple's privacy policy. If you don't connect it, nothing is sent." },
+      { "t": "Purchases", "p": "The Jangadeiro Pass and shop items are bought through the App Store. Apple processes the payment; the game only receives the purchase confirmation, to unlock the item and let you restore it." },
+      { "t": "Rewarded ads", "p": "Ads are optional and only appear when you choose to watch one to get +10 s of sun or double shells. They are served by Google AdMob, which may collect device data under its own policy. If iOS asks for tracking permission, you can decline and keep playing." },
+      { "t": "What we don't do", "p": "We don't sell data, we don't build profiles, and we don't ask for access to photos, contacts, location or microphone." },
+      { "t": "Children", "p": "The game doesn't ask anyone for personal data, children included." },
+      { "t": "Changes", "p": "If this policy changes, the date at the top of this page will be updated." }
+    ],
+    "ask": "Questions about privacy?", "email": "Send email", "subject": "Maré Alta · Privacy"
+  }
+}

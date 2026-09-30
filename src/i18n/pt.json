@@ -1,0 +1,50 @@
+{
+  "code": "pt-BR", "short": "PT", "name": "Português", "og": "pt_BR", "dir": "",
+  "slugs": { "support": "suporte", "privacy": "privacidade" },
+  "nav": { "game": "O jogo", "coast": "Litoral", "collection": "Coleção", "support": "Suporte", "privacy": "Privacidade", "download": "Baixar", "home": "Início", "language": "Idioma", "skip": "Ir para o conteúdo" },
+  "home": {
+    "title": "Maré Alta · Até onde o sol deixar",
+    "description": "Jogo de jangada para iPhone: navegue pelo litoral do Nordeste, junte conchas e vá até onde o sol deixar. Grátis para jogar.",
+    "tagline": "Até onde o sol deixar.",
+    "cta": "Baixar na App Store", "badge": "iPhone · iOS",
+    "game": { "eyebrow": "O jogo", "title": "O cenário já é o jogo.", "text": "Só distância, conchas, o sol como relógio e a pausa. A barbatana aparece à frente como aviso.", "alt": "Partida em andamento", "hint": "Jogado com o iPhone na horizontal" },
+    "landing": { "title": "Cada pouso conta.", "cards": [
+      { "img": "perfeito", "title": "Perfeito!", "text": "O momento mais recompensador: espirro, brilho e combo. Coincide com a vibração do pouso." },
+      { "img": "por-um-fio", "title": "Por um fio!", "text": "Bônus ao passar raspando no tubarão; a boia adianta o relógio do sol." },
+      { "img": "trombada", "title": "Trombada!", "text": "Impacto claro mas cômico: borda coral, jangada balança, perde segundos de sol." } ] },
+    "coast": { "eyebrow": "Mapa do litoral", "title": "De Porto de Galinhas a Jericoacoara.", "alt": "Mapa do litoral", "stops": ["Porto de Galinhas", "Olinda", "Itamaracá", "Pipa", "Jericoacoara"] },
+    "collection": { "eyebrow": "Coleção e loja", "title": "Velas e jangadas.", "text": "Conquistadas em cor; bloqueadas em silhueta, indicando se saem por conchas ou pela loja.", "alt": "Coleção", "freeTitle": "Grátis para jogar.", "freeText": "Você só paga se quiser uma skin de vela ou jangada. Nada muda na partida.", "tag": "Skins opcionais" },
+    "end": { "eyebrow": "O sol se pôs", "title": "Jogar de novo.", "text": "\"Jogar de novo\" em destaque; +10 s de sol e dobrar conchas como opções; compartilhar.", "alt": "Fim de partida" },
+    "footer": { "title": "Você vai mais longe?", "icon": "Ícone do Maré Alta" }
+  },
+  "support": {
+    "title": "Suporte · Maré Alta", "description": "Dúvidas sobre o Maré Alta: compras, anúncios, idioma, som e Game Center.",
+    "h1": "Suporte", "sub": "Dúvidas sobre o jogo, compras e ajustes.",
+    "faq": [
+      { "q": "Como restaurar o Passe do Jangadeiro?", "a": "Abra Ajustes e toque em Restaurar compras, usando o mesmo Apple ID da compra. O passe é uma compra única e volta sem cobrar de novo." },
+      { "q": "O que o Passe do Jangadeiro inclui?", "a": "Sem anúncios entre partidas, +10 s de sol sem assistir anúncio e conchas em dobro sem anúncio." },
+      { "q": "Os anúncios são obrigatórios?", "a": "Os anúncios recompensados são sempre opcionais: no fim da partida você escolhe se quer +10 s de sol ou dobrar as conchas. \"Jogar de novo\" continua sendo o botão principal." },
+      { "q": "Como trocar o idioma?", "a": "Em Ajustes, escolha Português ou English." },
+      { "q": "Como desligar som, música ou vibração?", "a": "Em Ajustes há uma chave para Efeitos sonoros, outra para Música e outra para Vibração." },
+      { "q": "Como conectar ao Game Center?", "a": "Em Ajustes, toque em Game Center. A conexão é feita com a sua conta da Apple." },
+      { "q": "Onde ficam minhas velas e jangadas?", "a": "Na Coleção. As conquistadas aparecem em cor; as bloqueadas aparecem em silhueta, indicando se saem por conchas ou pela loja." }
+    ],
+    "contactTitle": "Falar com a gente", "contactText": "Conte o modelo do iPhone, a versão do iOS e o que aconteceu. Um print da tela ajuda.",
+    "email": "Enviar e-mail", "subject": "Maré Alta · Suporte"
+  },
+  "privacy": {
+    "title": "Privacidade · Maré Alta", "description": "Política de privacidade do Maré Alta: sem conta, sem login, progresso guardado no seu iPhone.",
+    "h1": "Privacidade", "sub": "Atualizada em setembro de 2026.",
+    "intro": "O Maré Alta não pede conta, e-mail nem login. Seu progresso fica guardado no próprio iPhone.",
+    "sections": [
+      { "t": "O que fica no aparelho", "p": "Distância, recorde, conchas, trechos do litoral, coleção e ajustes (idioma, som, música, vibração) ficam salvos localmente no iPhone. Se você apagar o app, esses dados são apagados junto." },
+      { "t": "Game Center", "p": "Se você conectar o Game Center em Ajustes, a Apple recebe seu recorde para placares e conquistas, conforme a política de privacidade da Apple. Sem conectar, nada é enviado." },
+      { "t": "Compras", "p": "O Passe do Jangadeiro e os itens da loja são comprados pela App Store. O pagamento é processado pela Apple; o jogo recebe só a confirmação da compra, para liberar o item e permitir restaurá-lo." },
+      { "t": "Anúncios recompensados", "p": "Os anúncios são opcionais e só aparecem quando você escolhe assistir para ganhar +10 s de sol ou dobrar conchas. Eles são exibidos pelo Google AdMob, que pode coletar dados do aparelho conforme a própria política. Se o iOS pedir permissão de rastreamento, você pode negar e continuar jogando." },
+      { "t": "O que não fazemos", "p": "Não vendemos dados, não criamos perfis e não pedimos acesso a fotos, contatos, localização ou microfone." },
+      { "t": "Crianças", "p": "O jogo não pede dados pessoais a ninguém, inclusive crianças." },
+      { "t": "Mudanças", "p": "Se esta política mudar, a data no topo desta página será atualizada." }
+    ],
+    "ask": "Dúvidas sobre privacidade?", "email": "Enviar e-mail", "subject": "Maré Alta · Privacidade"
+  }
+}

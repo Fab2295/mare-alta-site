@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fab2295.github.io/mare-alta-site/sitemap.xml

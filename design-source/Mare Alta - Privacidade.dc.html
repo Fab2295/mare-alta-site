@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Privacidade · Maré Alta</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Shrikhand&amp;display=swap">
+<style>
+html,body{margin:0;padding:0;background:#FFF6E6}
+body{font-family:'Baloo 2',system-ui,sans-serif;color:#2B2340;-webkit-font-smoothing:antialiased}
+a{color:#1F8FA0;text-decoration:none}
+a:hover{color:#146E86}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<nav style="position:fixed;left:0;right:0;top:0;z-index:20;padding:14px clamp(14px,3vw,32px);pointer-events:none">
+  <div style="pointer-events:auto;max-width:1200px;margin:0 auto;height:60px;border-radius:30px;background:rgba(255,246,230,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 6px 22px rgba(43,35,64,.16);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 8px 0 10px">
+    <a href="Mare Alta - Site.dc.html" style="display:flex;align-items:center;gap:10px;color:#2B2340">
+      <img src="mare/icone.svg" alt="" style="width:40px;height:40px;border-radius:10px;display:block">
+      <span style="font-family:Shrikhand,serif;font-size:22px;line-height:1;padding-top:2px">Maré Alta</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:4px;font-weight:700;font-size:16px">
+      <a href="Mare Alta - Suporte.dc.html" style="height:44px;padding:0 14px;border-radius:22px;display:flex;align-items:center;color:#2B2340" style-hover="background:rgba(43,35,64,.07);color:#2B2340">Suporte</a>
+      <a href="Mare Alta - Privacidade.dc.html" style="height:44px;padding:0 14px;border-radius:22px;display:flex;align-items:center;color:#2B2340;background:rgba(43,35,64,.07)">Privacidade</a>
+    </div>
+  </div>
+</nav>
+
+<header data-screen-label="Privacidade" style="position:relative;height:clamp(380px,56vh,560px);overflow:hidden">
+  <dc-import name="Mare Cena" mode="band" night="0.85" hint-size="100%,100%" style="position:absolute;inset:0"></dc-import>
+  <div style="position:absolute;left:0;right:0;top:0;padding:clamp(110px,16vh,150px) clamp(20px,6vw,80px) 0">
+    <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:10px">
+      <h1 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:clamp(48px,7.5vw,92px);line-height:1;color:#FFF6E6;text-shadow:4px 5px 0 #2B2340">Privacidade</h1>
+      <p style="margin:0;font-size:clamp(19px,2vw,23px);font-weight:800;color:#FFF6E6">Atualizada em setembro de 2026.</p>
+    </div>
+  </div>
+</header>
+
+<main style="position:relative;z-index:2;margin-top:-56px;background:#FFF6E6;border-radius:40px 40px 0 0;padding:clamp(40px,6vw,72px) clamp(20px,6vw,80px) 80px">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:30px">
+    <p style="margin:0;font-size:20px;font-weight:700;line-height:1.55;text-wrap:pretty">O Maré Alta não pede conta, e-mail nem login. Seu progresso fica guardado no próprio iPhone.</p>
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+      <section style="display:flex;flex-direction:column;gap:8px;padding-top:24px;border-top:1.5px solid rgba(43,35,64,.12)">
+        <h2 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:28px;line-height:1.15">{{ s.t }}</h2>
+        <p style="margin:0;font-size:17px;font-weight:600;line-height:1.65;color:#5A4F6E;text-wrap:pretty">{{ s.p }}</p>
+      </section>
+    </sc-for>
+    <div style="background:#FFFFFF;border-radius:24px;padding:22px 24px;box-shadow:0 0 0 1px rgba(43,35,64,.08);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">
+      <span style="font-size:17px;font-weight:700">Dúvidas sobre privacidade?</span>
+      <a href="mailto:{{ email }}?subject=Mar%C3%A9%20Alta%20%C2%B7%20Privacidade" style="height:48px;padding:0 22px;border-radius:24px;background:#FFC93C;color:#2B2340;display:flex;align-items:center;font-weight:800;font-size:17px;box-shadow:0 4px 0 #D99A12" style-hover="color:#2B2340">Enviar e-mail</a>
+    </div>
+  </div>
+</main>
+
+<footer style="background:#2B2340;color:#FFF6E6;padding:22px clamp(20px,6vw,80px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;font-size:15px;font-weight:700">
+    <span>© 2026 Maré Alta</span>
+    <div style="display:flex;gap:6px">
+      <a href="Mare Alta - Site.dc.html" style="height:44px;padding:0 14px;border-radius:22px;display:flex;align-items:center;color:#FFF6E6" style-hover="background:rgba(255,246,230,.12);color:#FFF6E6">Início</a>
+      <a href="Mare Alta - Suporte.dc.html" style="height:44px;padding:0 14px;border-radius:22px;display:flex;align-items:center;color:#FFF6E6" style-hover="background:rgba(255,246,230,.12);color:#FFF6E6">Suporte</a>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;suporte@marealta.app&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      email: this.props.email ?? 'suporte@marealta.app',
+      sections: [
+        { t: 'O que fica no aparelho', p: 'Distância, recorde, conchas, trechos do litoral, coleção e ajustes (idioma, som, música, vibração) ficam salvos localmente no iPhone. Se você apagar o app, esses dados são apagados junto.' },
+        { t: 'Game Center', p: 'Se você conectar o Game Center em Ajustes, a Apple recebe seu recorde para placares e conquistas, conforme a política de privacidade da Apple. Sem conectar, nada é enviado.' },
+        { t: 'Compras', p: 'O Passe do Jangadeiro e os itens da loja são comprados pela App Store. O pagamento é processado pela Apple; o jogo recebe só a confirmação da compra, para liberar o item e permitir restaurá-lo.' },
+        { t: 'Anúncios recompensados', p: 'Os anúncios são opcionais e só aparecem quando você escolhe assistir para ganhar +10 s de sol ou dobrar conchas. Eles são exibidos por [rede de anúncios], que pode coletar dados do aparelho conforme a própria política. Se o iOS pedir permissão de rastreamento, você pode negar e continuar jogando.' },
+        { t: 'O que não fazemos', p: 'Não vendemos dados, não criamos perfis e não pedimos acesso a fotos, contatos, localização ou microfone.' },
+        { t: 'Crianças', p: 'O jogo não pede dados pessoais a ninguém, inclusive crianças.' },
+        { t: 'Mudanças', p: 'Se esta política mudar, a data no topo desta página será atualizada.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

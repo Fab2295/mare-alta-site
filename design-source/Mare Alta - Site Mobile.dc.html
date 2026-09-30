@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Maré Alta · Até onde o sol deixar</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Shrikhand&amp;display=swap">
+<style>
+html,body{margin:0;padding:0;background:#FFF6E6}
+body{font-family:'Baloo 2',system-ui,sans-serif;color:#2B2340;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+a{color:#1F8FA0;text-decoration:none}
+a:hover{color:#146E86}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<nav style="position:fixed;left:0;right:0;top:0;z-index:20;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 0;pointer-events:none">
+  <div style="pointer-events:auto;height:56px;border-radius:28px;background:rgba(255,246,230,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 6px 20px rgba(43,35,64,.16);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 6px 0 8px">
+    <a href="#topo" style="display:flex;align-items:center;gap:8px;color:#2B2340;min-height:44px">
+      <img src="mare/icone.svg" alt="" style="width:36px;height:36px;border-radius:9px;display:block">
+      <span style="font-family:Shrikhand,serif;font-size:19px;line-height:1;padding-top:2px">Maré Alta</span>
+    </a>
+    <a href="#baixar" style="height:44px;padding:0 18px;border-radius:22px;background:#FFC93C;color:#2B2340;display:flex;align-items:center;font-weight:800;font-size:16px;box-shadow:0 3px 0 #D99A12">Baixar</a>
+  </div>
+</nav>
+
+<section id="topo" data-ride="1" data-screen-label="Abertura" style="position:relative;height:170vh">
+  <div ref="{{ pinRef }}" style="position:fixed;left:0;right:0;top:0;height:100vh;overflow:hidden;z-index:0">
+    <dc-import name="Mare Cena" mode="hero" night="0" hint-size="100%,100%" style="position:absolute;inset:0"></dc-import>
+    <div ref="{{ heroTextRef }}" style="position:absolute;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top,0px) + 104px) 22px 0;will-change:transform,opacity">
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+        <h1 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:clamp(54px,16vw,76px);line-height:.95;color:#2B2340;text-shadow:3px 4px 0 #FFC93C">Maré Alta</h1>
+        <p style="margin:0;font-size:22px;font-weight:800;line-height:1.2;color:#2B2340">Até onde o sol deixar.</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:8px">
+          <a href="#baixar" style="height:54px;padding:0 22px;border-radius:27px;background:#FFC93C;color:#2B2340;display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;box-shadow:0 5px 0 #D99A12">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2B2340"><path d="M6 3.5v17l14-8.5z"></path></svg>
+            Baixar na App Store
+          </a>
+          <span style="height:32px;padding:0 12px;border-radius:16px;background:rgba(255,246,230,.9);display:flex;align-items:center;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">iPhone · iOS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="jogo" data-screen-label="O jogo" style="position:relative;z-index:2;margin-top:-8vh;background:#FFF6E6;border-radius:30px 30px 0 0;padding:44px 0 28px">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;flex-direction:column;gap:8px;padding:0 22px">
+      <div style="font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1F8FA0">O jogo</div>
+      <h2 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:38px;line-height:1.02;text-wrap:balance">O cenário já é o jogo.</h2>
+      <p style="margin:0;font-size:17px;font-weight:600;line-height:1.5;color:#5A4F6E;text-wrap:pretty">Só distância, conchas, o sol como relógio e a pausa. A barbatana aparece à frente como aviso.</p>
+    </div>
+    <div style="padding:0 14px">
+      <div data-reveal="1" style="background:#2B2340;border-radius:22px;padding:6px;box-shadow:0 18px 40px rgba(43,35,64,.25)">
+        <img src="mare/telas/partida.png" alt="Partida em andamento" style="width:100%;aspect-ratio:844/390;object-fit:cover;border-radius:17px;display:block">
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:700;color:#8A8198">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8198" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2.5"></rect><path d="M18 4.5a8 8 0 0 1 3 3"></path></svg>
+      Jogado com o iPhone na horizontal
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Pouso" style="position:relative;z-index:2;background:#FFF6E6;padding:28px 0">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:0 22px">
+      <h2 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:32px;line-height:1.05">Cada pouso conta.</h2>
+      <span style="font-size:13px;font-weight:800;color:#8A8198;padding-bottom:4px">Deslize</span>
+    </div>
+    <div style="display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 22px 18px;scroll-padding:0 22px;scrollbar-width:none">
+      <sc-for list="{{ feedback }}" as="f" hint-placeholder-count="0">
+        <div style="flex:0 0 84%;scroll-snap-align:start;background:#FFFFFF;border-radius:24px;padding:7px 7px 16px;box-shadow:0 0 0 1px rgba(43,35,64,.08),0 10px 24px rgba(43,35,64,.1);display:flex;flex-direction:column;gap:12px">
+          <div style="background:#2B2340;border-radius:18px;padding:4px"><img src="{{ f.img }}" alt="{{ f.title }}" style="width:100%;aspect-ratio:844/390;object-fit:cover;border-radius:14px;display:block"></div>
+          <div style="padding:0 9px;display:flex;flex-direction:column;gap:4px">
+            <div style="font-family:Shrikhand,serif;font-size:24px;line-height:1.1">{{ f.title }}</div>
+            <div style="font-size:15px;font-weight:600;line-height:1.45;color:#5A4F6E;text-wrap:pretty">{{ f.text }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="litoral" data-screen-label="Litoral" style="position:relative;z-index:2;background:#FFF6E6;padding:28px 0">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;flex-direction:column;gap:8px;padding:0 22px">
+      <div style="font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1F8FA0">Mapa do litoral</div>
+      <h2 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:32px;line-height:1.05;text-wrap:balance">De Porto de Galinhas a Jericoacoara.</h2>
+    </div>
+    <div style="padding:0 14px">
+      <div data-reveal="1" style="background:#2B2340;border-radius:22px;padding:6px;box-shadow:0 18px 40px rgba(43,35,64,.22)">
+        <img src="mare/telas/mapa.png" alt="Mapa do litoral" style="width:100%;aspect-ratio:844/390;object-fit:cover;border-radius:17px;display:block">
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;overflow-x:auto;padding:0 22px 4px;scrollbar-width:none">
+      <sc-for list="{{ stops }}" as="s" hint-placeholder-count="5">
+        <div style="flex:0 0 auto;height:40px;border-radius:20px;padding:0 14px 0 10px;display:flex;align-items:center;gap:8px;background:#FFFFFF;box-shadow:0 0 0 1px rgba(43,35,64,.1);font-size:15px;font-weight:800;white-space:nowrap">
+          <span style="width:12px;height:12px;border-radius:6px;background:{{ s.dot }}"></span>{{ s.name }}
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="colecao" data-screen-label="Coleção" style="position:relative;z-index:2;background:#FFF6E6;padding:28px 0">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;flex-direction:column;gap:8px;padding:0 22px">
+      <div style="font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1F8FA0">Coleção e loja</div>
+      <h2 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:32px;line-height:1.05">Velas e jangadas.</h2>
+      <p style="margin:0;font-size:17px;font-weight:600;line-height:1.5;color:#5A4F6E;text-wrap:pretty">Conquistadas em cor; bloqueadas em silhueta, indicando se saem por conchas ou pela loja.</p>
+    </div>
+    <div style="padding:0 14px">
+      <div data-reveal="1" style="background:#2B2340;border-radius:22px;padding:6px;box-shadow:0 14px 30px rgba(43,35,64,.2)">
+        <img src="mare/telas/colecao.png" alt="Coleção" style="width:100%;aspect-ratio:844/390;object-fit:cover;border-radius:17px;display:block">
+      </div>
+    </div>
+    <div style="margin:0 14px;background:#146E86;color:#FFF6E6;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px">
+      <div style="align-self:flex-start;height:30px;border-radius:15px;padding:0 12px;display:flex;align-items:center;background:#FFC93C;color:#2B2340;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">Skins opcionais</div>
+      <h3 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:28px;line-height:1.05">Grátis para jogar.</h3>
+      <p style="margin:0;font-size:16px;font-weight:600;line-height:1.5;text-wrap:pretty">Você só paga se quiser uma skin de vela ou jangada. Nada muda na partida.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Fim de partida" style="position:relative;z-index:2;background:#FFF6E6;padding:28px 0 72px">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;flex-direction:column;gap:8px;padding:0 22px">
+      <div style="font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1F8FA0">O sol se pôs</div>
+      <h2 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:32px;line-height:1.05">Jogar de novo.</h2>
+      <p style="margin:0;font-size:17px;font-weight:600;line-height:1.5;color:#5A4F6E;text-wrap:pretty">"Jogar de novo" em destaque; +10 s de sol e dobrar conchas como opções; compartilhar.</p>
+    </div>
+    <div style="padding:0 14px">
+      <div data-reveal="1" style="background:#2B2340;border-radius:22px;padding:6px;box-shadow:0 18px 40px rgba(43,35,64,.22)">
+        <img src="mare/telas/fim.png" alt="Fim de partida" style="width:100%;aspect-ratio:844/390;object-fit:cover;border-radius:17px;display:block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="baixar" data-screen-label="Baixar" style="position:relative;z-index:2;height:max(640px,92svh);overflow:hidden;border-radius:30px 30px 0 0;margin-top:-30px">
+  <dc-import name="Mare Cena" mode="band" night="0.85" hint-size="100%,100%" style="position:absolute;inset:0"></dc-import>
+  <div style="position:absolute;left:0;right:0;top:0;padding:64px 22px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+    <img src="mare/icone.svg" alt="Ícone do Maré Alta" style="width:84px;height:84px;border-radius:19px;box-shadow:0 10px 26px rgba(0,0,0,.35);display:block">
+    <h2 style="margin:0;font-family:Shrikhand,serif;font-weight:400;font-size:42px;line-height:1;color:#FFF6E6;text-shadow:3px 4px 0 #2B2340;text-wrap:balance">Você vai mais longe?</h2>
+    <a href="#" style="height:56px;padding:0 24px;border-radius:28px;background:#FFC93C;color:#2B2340;display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;box-shadow:0 5px 0 #D99A12">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#2B2340"><path d="M6 3.5v17l14-8.5z"></path></svg>
+      Baixar na App Store
+    </a>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px calc(env(safe-area-inset-bottom,0px) + 16px)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#FFF6E6">
+      <div style="display:flex;gap:4px">
+        <a href="Mare Alta - Suporte.dc.html" style="height:44px;padding:0 16px;border-radius:22px;display:flex;align-items:center;color:#FFF6E6;background:rgba(43,35,64,.35)">Suporte</a>
+        <a href="Mare Alta - Privacidade.dc.html" style="height:44px;padding:0 16px;border-radius:22px;display:flex;align-items:center;color:#FFF6E6;background:rgba(43,35,64,.35)">Privacidade</a>
+      </div>
+      <span>© 2026 Maré Alta</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  heroTextRef = React.createRef(); pinRef = React.createRef();
+  componentDidMount() {
+    const update = () => {
+      const pin = this.pinRef.current;
+      if (pin) { const r = pin.parentElement.getBoundingClientRect(); const v = r.bottom > 0 ? 'visible' : 'hidden'; if (pin.style.visibility !== v) pin.style.visibility = v; }
+      const el = this.heroTextRef.current;
+      if (el) { const q = Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 0.7))); el.style.transform = `translate3d(0,${-q * 40}px,0)`; el.style.opacity = String(1 - q); }
+    };
+    this.onScroll = update;
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.io.unobserve(e.target); } }), { threshold: 0.15 });
+      setTimeout(() => document.querySelectorAll('[data-reveal]').forEach(n => {
+        if (n.getBoundingClientRect().top < innerHeight) return;
+        n.style.opacity = '0'; n.style.transform = 'translateY(24px)'; n.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1)'; this.io.observe(n);
+      }), 200);
+    }
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); this.io && this.io.disconnect(); }
+  renderVals() {
+    return {
+      heroTextRef: this.heroTextRef, pinRef: this.pinRef,
+      feedback: [
+        { img: 'mare/telas/perfeito.png', title: 'Perfeito!', text: 'O momento mais recompensador: espirro, brilho e combo. Coincide com a vibração do pouso.' },
+        { img: 'mare/telas/por-um-fio.png', title: 'Por um fio!', text: 'Bônus ao passar raspando no tubarão; a boia adianta o relógio do sol.' },
+        { img: 'mare/telas/trombada.png', title: 'Trombada!', text: 'Impacto claro mas cômico: borda coral, jangada balança, perde segundos de sol.' }
+      ],
+      stops: [
+        { name: 'Porto de Galinhas', dot: '#E4553B' },
+        { name: 'Olinda', dot: '#E4553B' },
+        { name: 'Itamaracá', dot: '#FFC93C' },
+        { name: 'Pipa', dot: '#8A8198' },
+        { name: 'Jericoacoara', dot: '#8A8198' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

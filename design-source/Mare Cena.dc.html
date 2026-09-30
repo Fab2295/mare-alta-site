@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div ref="{{ rootRef }}" style="position:absolute;inset:0;overflow:hidden;background:#D9668A;container-type:size">
+  <div ref="{{ stageRef }}" style="position:absolute;left:50%;bottom:0;width:max(108cqw,240cqh);aspect-ratio:1804/812;transform:translateX(-50%);will-change:transform">
+    <img ref="{{ l1Ref }}" src="mare/cena/l1.webp" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;display:block;will-change:transform">
+    <img ref="{{ l2Ref }}" src="mare/cena/l2.webp" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;display:block;will-change:transform">
+    <img ref="{{ l3Ref }}" src="mare/cena/l3.webp" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;display:block;will-change:transform">
+    <img ref="{{ boatRef }}" src="mare/cena/jangada.png" alt="Jangada" style="position:absolute;left:0;top:0;width:13%;display:block;transform-origin:50% 80%;will-change:transform;filter:drop-shadow(0 6px 0 rgba(43,35,64,.12))">
+    <img ref="{{ l4Ref }}" src="mare/cena/l4.webp" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;display:block;will-change:transform">
+  </div>
+  <div ref="{{ nightRef }}" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#15123F 0%,#35286F 38%,#3E3C93 62%,#6A55A8 100%);mix-blend-mode:multiply;opacity:0"></div>
+  <div ref="{{ starsRef }}" style="position:absolute;left:0;right:0;top:0;height:45%;pointer-events:none;opacity:0">
+    <sc-for list="{{ stars }}" as="s" hint-placeholder-count="0">
+      <div style="position:absolute;left:{{ s.x }};top:{{ s.y }};width:{{ s.r }};height:{{ s.r }};border-radius:50%;background:#FFF6D6"></div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1200px&quot;,&quot;height&quot;:&quot;600px&quot;},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;hero&quot;,&quot;band&quot;],&quot;default&quot;:&quot;band&quot;,&quot;tsType&quot;:&quot;'hero'|'band'&quot;},&quot;night&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;default&quot;:0,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef(); stageRef = React.createRef();
+  l1Ref = React.createRef(); l2Ref = React.createRef(); l3Ref = React.createRef(); l4Ref = React.createRef();
+  boatRef = React.createRef(); nightRef = React.createRef(); starsRef = React.createRef();
+  mx = 0; my = 0; tmx = 0; tmy = 0; q = 0;
+  stars = Array.from({ length: 46 }, (_, i) => {
+    const r = (n) => { const x = Math.sin(i * 12.9898 + n * 78.233) * 43758.5453; return x - Math.floor(x); };
+    return { x: (r(1) * 100).toFixed(2) + '%', y: (r(2) * 100).toFixed(2) + '%', r: (r(3) > 0.8 ? 3 : 2) + 'px' };
+  });
+  componentDidMount() {
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const img = new Image(); img.src = 'mare/cena/l4.webp';
+    img.onload = () => {
+      const N = 240, c = document.createElement('canvas'); c.width = N; c.height = 200;
+      const x = c.getContext('2d'); x.drawImage(img, 0, 0, N, 200);
+      const d = x.getImageData(0, 0, N, 200).data; const hm = new Float32Array(N);
+      for (let i = 0; i < N; i++) { let y = 0; while (y < 199 && d[(y * N + i) * 4 + 3] < 140) y++; hm[i] = y / 200; }
+      this.hm = hm;
+    };
+    this.onMove = (e) => { this.tmx = e.clientX / innerWidth - 0.5; this.tmy = e.clientY / innerHeight - 0.5; };
+    window.addEventListener('pointermove', this.onMove);
+    this.onScroll = () => { this.snap = true; this.frame(); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.t0 = performance.now();
+    const tick = () => { this.frame(); this.raf = requestAnimationFrame(tick); };
+    tick();
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); window.removeEventListener('pointermove', this.onMove); window.removeEventListener('scroll', this.onScroll); }
+  surf(f) { const hm = this.hm; if (!hm) return 0.62; const N = hm.length; const p = Math.min(N - 1.001, Math.max(0, f * (N - 1))); const i = Math.floor(p), k = p - i; return hm[i] * (1 - k) + hm[i + 1] * k; }
+  frame() {
+    const root = this.rootRef.current, st = this.stageRef.current; if (!root || !st) return;
+    const t = this.reduce ? 0 : (performance.now() - this.t0) / 1000;
+    const mode = this.props.mode || 'band';
+    let q = 0;
+    if (mode === 'hero') {
+      const ride = root.closest('[data-ride]');
+      if (ride) { const r = ride.getBoundingClientRect(); const span = r.height - innerHeight; q = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0; }
+    }
+    this.q += (q - this.q) * (this.snap ? 1 : 0.12); this.snap = false;
+    this.mx += (this.tmx - this.mx) * 0.06; this.my += (this.tmy - this.my) * 0.06;
+    const ch = root.clientHeight, sw = st.clientWidth, sh = st.clientHeight;
+    const Q = this.q;
+    const k = [0.015, 0.05, 0.1, 0.22], m = [6, 14, 24, 40];
+    const bob = (a, s) => this.reduce ? 0 : Math.sin(t * s) * a;
+    const ty = k.map((kk, i) => Q * kk * ch + this.my * m[i] * 0.5);
+    const tx = m.map(v => -this.mx * v);
+    ty[2] += bob(2, 0.9); ty[3] += bob(5, 1.1);
+    [this.l1Ref, this.l2Ref, this.l3Ref, this.l4Ref].forEach((r, i) => { if (r.current) r.current.style.transform = `translate3d(${tx[i]}px,${ty[i]}px,0)`; });
+    const night = this.props.night != null ? +this.props.night : 0;
+    const nv = mode === 'hero' ? Math.min(1, night + Math.max(0, Q - 0.55) * 1.4) : night;
+    if (this.nightRef.current) this.nightRef.current.style.opacity = (nv * 0.82).toFixed(3);
+    if (this.starsRef.current) this.starsRef.current.style.opacity = Math.max(0, (nv - 0.35) / 0.65).toFixed(3);
+    const b = this.boatRef.current;
+    if (b && sw) {
+      const fx = mode === 'hero' ? 0.4 + Q * 0.3 + bob(0.006, 0.5) : 0.3 + bob(0.01, 0.25);
+      const bw = sw * 0.13, bh = bw * 360 / 452;
+      const cx = fx + 0.065 / 1;
+      const y = this.surf(cx) * sh + ty[3];
+      const s1 = this.surf(cx - 0.03) * sh, s2 = this.surf(cx + 0.03) * sh;
+      const ang = Math.atan2(s2 - s1, sw * 0.06) * 0.85 + bob(0.03, 1.6);
+      b.style.transform = `translate3d(${fx * sw + tx[3]}px,${y - bh * 0.8}px,0) rotate(${ang}rad)`;
+    }
+  }
+  renderVals() {
+    return {
+      rootRef: this.rootRef, stageRef: this.stageRef, l1Ref: this.l1Ref, l2Ref: this.l2Ref, l3Ref: this.l3Ref, l4Ref: this.l4Ref,
+      boatRef: this.boatRef, nightRef: this.nightRef, starsRef: this.starsRef, stars: this.stars
+    };
+  }
+}
+</script>
+</body>
+</html>
