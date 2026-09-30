@@ -100,7 +100,7 @@ function home(l) {
 ${skip(l)}
 ${nav(l, 'home', rel)}
 <main id="main">
-<section id="topo" class="ride">
+<section id="topo" class="ride" data-ride>
   <div class="pin">
     ${scene({ rel, mode: 'hero', night: 0, eager: true })}
     <div class="hero-text" data-heroText><div>

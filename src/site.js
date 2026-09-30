@@ -40,17 +40,24 @@
     }
   }
 
-  // hero text fades out with the scroll (passive listener + rAF, no continuous loop)
+  // hero: the scene stays pinned (fixed) while the sheet slides over it; text fades out with the scroll
+  const ride = d.querySelector('[data-ride]');
+  const pin = ride && ride.querySelector('.pin');
   const ht = d.querySelector('[data-heroText]');
-  if (ht && !reduce) {
+  if (ride) {
     let tick = false;
     const upd = () => {
       tick = false;
-      const q = Math.min(1, Math.max(0, scrollY / (innerHeight * 0.9)));
-      ht.style.transform = `translate3d(0,${-q * 60}px,0)`;
-      ht.style.opacity = String(1 - q);
+      const v = ride.getBoundingClientRect().bottom > 0 ? 'visible' : 'hidden';
+      if (pin && pin.style.visibility !== v) pin.style.visibility = v;
+      if (ht && !reduce) {
+        const q = Math.min(1, Math.max(0, scrollY / (innerHeight * 0.9)));
+        ht.style.transform = `translate3d(0,${-q * 60}px,0)`;
+        ht.style.opacity = String(1 - q);
+      }
     };
     addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+    addEventListener('resize', upd);
     upd();
   }
 
@@ -88,7 +95,7 @@
         want = es[es.length - 1].isIntersecting;
         clearTimeout(timer);
         if (want) up(); else timer = setTimeout(down, 4000);
-      }, { rootMargin: '25% 0px' }).observe(el);
+      }, { rootMargin: '25% 0px' }).observe(el.closest('[data-ride]') || el);
     });
   }
 })();

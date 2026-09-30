@@ -58,7 +58,7 @@ h1,h2,h3,p{margin:0}
 /* hero */
 .ride{position:relative;height:210vh}
 @media (max-width:819px){.ride{height:170vh}}
-.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.pin{position:fixed;left:0;right:0;top:0;height:100vh;height:100lvh;overflow:hidden;z-index:0}
 .hero-text{position:absolute;left:0;right:0;top:0;padding:clamp(104px,15vh,150px) clamp(20px,6vw,80px) 0;will-change:transform,opacity}
 .hero-text>div{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 h1.title{font-size:clamp(54px,10.5vw,136px);line-height:.95;text-shadow:4px 6px 0 var(--sun)}
