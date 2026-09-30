@@ -92,12 +92,16 @@ export async function mount({ container, base, mode = 'band', night = 0 }) {
 
   const layers = [0, 1, 2].map((i) => plane(textures[i], i));
   const l4 = plane(textures[3], 4);
+  const fillMat = new MeshBasicMaterial({ color: new Color('#874F80'), depthTest: false, depthWrite: false });
+  disposables.push(fillMat);
+  const fill = new Mesh(geo, fillMat);
+  fill.renderOrder = 4;
   const boat = new Group();
   const boatShadow = plane(textures[4], 3, { color: 0x2b2340, opacity: 0.12 });
   const boatMesh = plane(textures[4], 3.5);
   boat.add(boatShadow, boatMesh);
   boat.renderOrder = 3;
-  scene.add(layers[0], layers[1], layers[2], boat, l4);
+  scene.add(layers[0], layers[1], layers[2], boat, l4, fill);
 
   const nightMat = new ShaderMaterial({
     transparent: true, depthTest: false, depthWrite: false,
@@ -136,6 +140,8 @@ export async function mount({ container, base, mode = 'band', night = 0 }) {
   scene.add(stars);
 
   const ride = container.closest('[data-ride]');
+  const coarse = matchMedia('(hover: none)').matches;
+  let inset = 0, lastW = 0, lastH = 0, lastInput = 0, lastDraw = 0;
   let cw = 0, ch = 0, mx = 0, my = 0, tmx = 0, tmy = 0, q = 0, snap = true;
   let raf = 0, running = false, dead = false;
   const t0 = performance.now();
@@ -146,9 +152,26 @@ export async function mount({ container, base, mode = 'band', night = 0 }) {
     return hm[i] * (1 - k) + hm[i + 1] * k;
   };
 
+  // Hero lives in a 100lvh box; on iOS the bottom (100lvh - 100svh) can sit behind the toolbar,
+  // so the art is lifted by that amount instead of resizing the canvas while the toolbar animates.
+  function measureInset() {
+    if (mode !== 'hero') return 0;
+    const p = document.createElement('div');
+    p.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:100vh;height:100svh;visibility:hidden;pointer-events:none';
+    document.body.appendChild(p);
+    const v = Math.max(0, container.clientHeight - p.offsetHeight);
+    p.remove();
+    return v;
+  }
+
   function resize() {
-    cw = container.clientWidth; ch = container.clientHeight;
-    if (!cw || !ch) return;
+    const w = container.clientWidth, h = container.clientHeight;
+    if (!w || !h) return;
+    // ignore toolbar-sized height jitters on touch devices: only a width change or a big height change re-allocates
+    if (coarse && w === lastW && Math.abs(h - lastH) < 160 && lastH) return;
+    lastW = w; lastH = h;
+    cw = w; ch = h;
+    inset = measureInset();
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     renderer.setPixelRatio(dpr);
     renderer.setSize(cw, ch, false);
@@ -177,8 +200,9 @@ export async function mount({ container, base, mode = 'band', night = 0 }) {
     snap = false;
     mx += (tmx - mx) * 0.06; my += (tmy - my) * 0.06;
 
-    const sw = Math.max(cw * 1.08, ch * 2.4), sh = sw / STAGE_RATIO;
-    const sl = (cw - sw) / 2, st = ch - sh; // stage top-left in css px
+    // portrait phones: frame by width so more of the coast shows; the sky colour continues above
+    const sw = ch > cw ? Math.max(cw * 2.6, ch * 1.1) : Math.max(cw * 1.08, ch * 2.4), sh = sw / STAGE_RATIO;
+    const sl = (cw - sw) / 2, st = ch - inset - sh; // stage top-left in css px
     const bob = (a, s) => (reduce ? 0 : Math.sin(t * s) * a);
     const ty = K.map((k, i) => q * k * ch + my * M[i] * 0.5);
     const tx = M.map((v) => -mx * v);
@@ -190,6 +214,10 @@ export async function mount({ container, base, mode = 'band', night = 0 }) {
     };
     layers.forEach((m, i) => place(m, i));
     place(l4, 3);
+    const fy = st + ty[3] + sh - 2, fh = ch - fy + 4;
+    fill.visible = fh > 0;
+    fill.scale.set(cw + 80, Math.max(fh, 1), 1);
+    fill.position.set(cw / 2, ch - (fy + fh / 2), 0);
 
     const fx = mode === 'hero' ? 0.4 + q * 0.3 + bob(0.006, 0.5) : 0.3 + bob(0.01, 0.25);
     const bw = sw * 0.13, bh = bw * BOAT_RATIO;
@@ -214,16 +242,17 @@ export async function mount({ container, base, mode = 'band', night = 0 }) {
     renderer.render(scene, cam);
   }
 
-  function loop() {
+  function loop(now) {
     if (!running) return;
-    draw();
+    // phones: full rate while the user scrolls/touches, ~30 fps for the idle bobbing
+    if (!coarse || now - lastInput < 400 || now - lastDraw > 30) { lastDraw = now; draw(); }
     raf = requestAnimationFrame(loop);
   }
   const start = () => { if (!running && !dead) { running = true; raf = requestAnimationFrame(loop); } };
   const stop = () => { running = false; cancelAnimationFrame(raf); };
 
-  const onMove = (e) => { tmx = e.clientX / innerWidth - 0.5; tmy = e.clientY / innerHeight - 0.5; };
-  const onScroll = () => { snap = true; if (!running) draw(); };
+  const onMove = (e) => { lastInput = performance.now(); tmx = e.clientX / innerWidth - 0.5; tmy = e.clientY / innerHeight - 0.5; };
+  const onScroll = () => { lastInput = performance.now(); snap = true; if (!running) draw(); };
   const onVis = () => { document.hidden ? stop() : start(); };
   const onLost = (e) => { e.preventDefault(); api.onLost && api.onLost(); };
 
