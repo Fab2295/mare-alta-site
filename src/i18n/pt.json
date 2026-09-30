@@ -1,50 +1,214 @@
 {
-  "code": "pt-BR", "short": "PT", "name": "Português", "og": "pt_BR", "dir": "",
-  "slugs": { "support": "suporte", "privacy": "privacidade" },
-  "nav": { "game": "O jogo", "coast": "Litoral", "collection": "Coleção", "support": "Suporte", "privacy": "Privacidade", "download": "Baixar", "home": "Início", "language": "Idioma", "skip": "Ir para o conteúdo" },
+  "code": "pt-BR",
+  "short": "PT",
+  "name": "Português",
+  "og": "pt_BR",
+  "dir": "",
+  "slugs": {
+    "support": "suporte",
+    "privacy": "privacidade"
+  },
+  "nav": {
+    "game": "O jogo",
+    "coast": "Litoral",
+    "collection": "Coleção",
+    "support": "Suporte",
+    "privacy": "Privacidade",
+    "download": "Baixar",
+    "home": "Início",
+    "language": "Idioma",
+    "skip": "Ir para o conteúdo"
+  },
   "home": {
     "title": "Maré Alta · Até onde o sol deixar",
-    "description": "Jogo de jangada para iPhone: navegue pelo litoral do Nordeste, junte conchas e vá até onde o sol deixar. Grátis para jogar.",
+    "description": "Jogo de jangada para iPhone: surfe as ondas do litoral do Nordeste, de Porto de Galinhas a Jericoacoara, fuja do tubarão e vá até onde o sol deixar. Grátis para jogar.",
     "tagline": "Até onde o sol deixar.",
-    "cta": "Baixar na App Store", "badge": "iPhone · iOS",
-    "game": { "eyebrow": "O jogo", "title": "O cenário já é o jogo.", "text": "Só distância, conchas, o sol como relógio e a pausa. A barbatana aparece à frente como aviso.", "alt": "Partida em andamento", "hint": "Jogado com o iPhone na horizontal" },
-    "landing": { "title": "Cada pouso conta.", "cards": [
-      { "img": "perfeito", "title": "Perfeito!", "text": "O momento mais recompensador: espirro, brilho e combo. Coincide com a vibração do pouso." },
-      { "img": "por-um-fio", "title": "Por um fio!", "text": "Bônus ao passar raspando no tubarão; a boia adianta o relógio do sol." },
-      { "img": "trombada", "title": "Trombada!", "text": "Impacto claro mas cômico: borda coral, jangada balança, perde segundos de sol." } ] },
-    "coast": { "eyebrow": "Mapa do litoral", "title": "De Porto de Galinhas a Jericoacoara.", "alt": "Mapa do litoral", "stops": ["Porto de Galinhas", "Olinda", "Itamaracá", "Pipa", "Jericoacoara"] },
-    "collection": { "eyebrow": "Coleção e loja", "title": "Velas e jangadas.", "text": "Conquistadas em cor; bloqueadas em silhueta, indicando se saem por conchas ou pela loja.", "alt": "Coleção", "freeTitle": "Grátis para jogar.", "freeText": "Você só paga se quiser uma skin de vela ou jangada. Nada muda na partida.", "tag": "Skins opcionais" },
-    "end": { "eyebrow": "O sol se pôs", "title": "Jogar de novo.", "text": "\"Jogar de novo\" em destaque; +10 s de sol e dobrar conchas como opções; compartilhar.", "alt": "Fim de partida" },
-    "footer": { "title": "Você vai mais longe?", "icon": "Ícone do Maré Alta" }
+    "cta": "Baixar na App Store",
+    "badge": "iPhone · iOS",
+    "game": {
+      "eyebrow": "O jogo",
+      "title": "O cenário já é o jogo.",
+      "text": "Segure para a jangada mergulhar na descida da onda e solte para voar na subida. Um toque rápido dá um pulinho. O sol é o relógio: boias e paradas dão mais tempo, e a barbatana aparece à frente como aviso do tubarão.",
+      "alt": "Partida em andamento",
+      "hint": "Jogado com o iPhone na horizontal"
+    },
+    "landing": {
+      "title": "Cada pouso conta.",
+      "cards": [
+        {
+          "img": "perfeito",
+          "title": "Perfeito!",
+          "text": "Encaixe o pouso na descida da onda: espirro, brilho, conchas e a vibração no iPhone."
+        },
+        {
+          "img": "por-um-fio",
+          "title": "Por um fio!",
+          "text": "Passe raspando pelo tubarão e leve o bônus. Cada tubarão driblado conta no fim da partida."
+        },
+        {
+          "img": "trombada",
+          "title": "Trombada!",
+          "text": "Bateu no tubarão? A jangada balança e você perde segundos de sol."
+        }
+      ]
+    },
+    "coast": {
+      "eyebrow": "Mapa do litoral",
+      "title": "De Porto de Galinhas a Jericoacoara.",
+      "alt": "Mapa do litoral",
+      "stops": [
+        "Porto de Galinhas",
+        "Cabo de Santo Agostinho",
+        "Boa Viagem",
+        "Marco Zero",
+        "Olinda",
+        "Pau Amarelo",
+        "Itamaracá",
+        "João Pessoa",
+        "Baía da Traição",
+        "Pipa",
+        "Natal",
+        "São Miguel do Gostoso",
+        "Canoa Quebrada",
+        "Fortaleza",
+        "Cumbuco",
+        "Jericoacoara"
+      ],
+      "text": "16 paradas, uma a cada km, cada uma com o seu horizonte à tarde, no pôr do sol e à noite. Cada parada dá +8 s de sol. O sentido é sorteado a cada partida, e ida e volta têm recordes separados.",
+      "europe": "Rota Europa: 11 paradas, de Portugal à Grécia. Chega com a Loja."
+    },
+    "collection": {
+      "eyebrow": "Coleção",
+      "title": "Velas e jangadas.",
+      "text": "Chita e Cordel saem subindo de nível; Renda de bilro e Azulejo, juntando conchas. E mais de 40 velas da Loja em coleções: Fundo do Mar, Bichos do Brasil, Bandeiras e Estados do Nordeste.",
+      "alt": "Coleção",
+      "freeTitle": "Grátis para jogar.",
+      "freeText": "Anúncio só quando você quer: +10 s de sol ou conchas em dobro no fim da partida. E todo mês uma vela da Loja sai assistindo 3 anúncios.",
+      "tag": "Vela do mês"
+    },
+    "end": {
+      "eyebrow": "O sol se pôs",
+      "title": "Jogar de novo.",
+      "text": "Veja o trecho, os pontos, os tubarões driblados e as conchas. Quer mais um pouco? Um anúncio dá +10 s de sol ou dobra as conchas. Ou compartilhe o resultado.",
+      "alt": "Fim de partida"
+    },
+    "footer": {
+      "title": "Você vai mais longe?",
+      "icon": "Ícone do Maré Alta"
+    },
+    "sea": {
+      "eyebrow": "No mar",
+      "title": "Tem sempre alguma coisa vindo.",
+      "items": [
+        {
+          "t": "Gaivotas",
+          "p": "Aparecem em três alturas depois dos primeiros 900 m. Leia o voo delas antes de pular."
+        },
+        {
+          "t": "Boia dourada",
+          "p": "As boias dão +3 s de sol. A dourada, rara e só depois de 5 km, dá +9 s."
+        },
+        {
+          "t": "Voo",
+          "p": "Cada segundo no ar vira pontos quando a jangada cai na água. Voo alto vale +50."
+        },
+        {
+          "t": "Maré Alta!",
+          "p": "Emende pousos perfeitos e as conchas passam a valer em dobro por um tempo."
+        },
+        {
+          "t": "Missões",
+          "p": "Três missões por nível. Subir de nível libera velas novas na Coleção."
+        },
+        {
+          "t": "Baião e mar",
+          "p": "Música de baião e som do mar, com volume de efeitos e de música nos Ajustes."
+        }
+      ]
+    }
   },
   "support": {
-    "title": "Suporte · Maré Alta", "description": "Dúvidas sobre o Maré Alta: compras, anúncios, idioma, som e Game Center.",
-    "h1": "Suporte", "sub": "Dúvidas sobre o jogo, compras e ajustes.",
+    "title": "Suporte · Maré Alta",
+    "description": "Dúvidas sobre o Maré Alta: anúncios, vela do mês, coleção, rotas, idioma e som.",
+    "h1": "Suporte",
+    "sub": "Dúvidas sobre o jogo, compras e ajustes.",
     "faq": [
-      { "q": "Como restaurar o Passe do Jangadeiro?", "a": "Abra Ajustes e toque em Restaurar compras, usando o mesmo Apple ID da compra. O passe é uma compra única e volta sem cobrar de novo." },
-      { "q": "O que o Passe do Jangadeiro inclui?", "a": "Sem anúncios entre partidas, +10 s de sol sem assistir anúncio e conchas em dobro sem anúncio." },
-      { "q": "Os anúncios são obrigatórios?", "a": "Os anúncios recompensados são sempre opcionais: no fim da partida você escolhe se quer +10 s de sol ou dobrar as conchas. \"Jogar de novo\" continua sendo o botão principal." },
-      { "q": "Como trocar o idioma?", "a": "Em Ajustes, escolha Português ou English." },
-      { "q": "Como desligar som, música ou vibração?", "a": "Em Ajustes há uma chave para Efeitos sonoros, outra para Música e outra para Vibração." },
-      { "q": "Como conectar ao Game Center?", "a": "Em Ajustes, toque em Game Center. A conexão é feita com a sua conta da Apple." },
-      { "q": "Onde ficam minhas velas e jangadas?", "a": "Na Coleção. As conquistadas aparecem em cor; as bloqueadas aparecem em silhueta, indicando se saem por conchas ou pela loja." }
+      {
+        "q": "Os anúncios são obrigatórios?",
+        "a": "Não. Eles só aparecem quando você escolhe: no fim da partida, para ganhar +10 s de sol ou dobrar as conchas, e na Vela do mês. \"Jogar de novo\" continua sendo o botão principal."
+      },
+      {
+        "q": "O que é a Vela do mês?",
+        "a": "Todo dia 1 o jogo escolhe uma vela da Loja que sai assistindo 3 anúncios. Ela aparece no topo da Coleção e no menu. O progresso fica salvo: se o mês virar antes, continua quando ela voltar."
+      },
+      {
+        "q": "Como ganho velas e jangadas?",
+        "a": "Na Coleção: Chita no nível 2, Cordel no nível 4, Renda de bilro com 300 conchas e Azulejo com 500. As velas da Loja aparecem com cadeado até a Loja abrir."
+      },
+      {
+        "q": "Como subo de nível?",
+        "a": "Cada nível tem 3 missões, que aparecem no menu. Complete as três para subir."
+      },
+      {
+        "q": "Por que às vezes a partida começa em Jericoacoara?",
+        "a": "O sentido é sorteado a cada partida: de Porto de Galinhas rumo a Jericoacoara ou a volta. Cada sentido tem o seu recorde no Mapa."
+      },
+      {
+        "q": "Como trocar o idioma?",
+        "a": "Em Ajustes, escolha Português, English ou Español. Na primeira vez, o jogo segue o idioma do iPhone."
+      },
+      {
+        "q": "Como ajustar som, música ou vibração?",
+        "a": "Em Ajustes há volume para Efeitos sonoros e para Música, e uma chave para Vibração. Durante a pausa, a engrenagem abre os Ajustes."
+      },
+      {
+        "q": "Tem Game Center e compras?",
+        "a": "Ainda não. Game Center, Loja e Restaurar compras chegam numa próxima atualização."
+      }
     ],
-    "contactTitle": "Falar com a gente", "contactText": "Conte o modelo do iPhone, a versão do iOS e o que aconteceu. Um print da tela ajuda.",
-    "email": "Enviar e-mail", "subject": "Maré Alta · Suporte"
+    "contactTitle": "Falar com a gente",
+    "contactText": "Conte o modelo do iPhone, a versão do iOS e o que aconteceu. Um print da tela ajuda.",
+    "email": "Enviar e-mail",
+    "subject": "Maré Alta · Suporte"
   },
   "privacy": {
-    "title": "Privacidade · Maré Alta", "description": "Política de privacidade do Maré Alta: sem conta, sem login, progresso guardado no seu iPhone.",
-    "h1": "Privacidade", "sub": "Atualizada em setembro de 2026.",
+    "title": "Privacidade · Maré Alta",
+    "description": "Política de privacidade do Maré Alta: sem conta, progresso guardado no iPhone, anúncios opcionais do Google AdMob.",
+    "h1": "Privacidade",
+    "sub": "Atualizada em setembro de 2026.",
     "intro": "O Maré Alta não pede conta, e-mail nem login. Seu progresso fica guardado no próprio iPhone.",
     "sections": [
-      { "t": "O que fica no aparelho", "p": "Distância, recorde, conchas, trechos do litoral, coleção e ajustes (idioma, som, música, vibração) ficam salvos localmente no iPhone. Se você apagar o app, esses dados são apagados junto." },
-      { "t": "Game Center", "p": "Se você conectar o Game Center em Ajustes, a Apple recebe seu recorde para placares e conquistas, conforme a política de privacidade da Apple. Sem conectar, nada é enviado." },
-      { "t": "Compras", "p": "O Passe do Jangadeiro e os itens da loja são comprados pela App Store. O pagamento é processado pela Apple; o jogo recebe só a confirmação da compra, para liberar o item e permitir restaurá-lo." },
-      { "t": "Anúncios recompensados", "p": "Os anúncios são opcionais e só aparecem quando você escolhe assistir para ganhar +10 s de sol ou dobrar conchas. Eles são exibidos pelo Google AdMob, que pode coletar dados do aparelho conforme a própria política. Se o iOS pedir permissão de rastreamento, você pode negar e continuar jogando." },
-      { "t": "O que não fazemos", "p": "Não vendemos dados, não criamos perfis e não pedimos acesso a fotos, contatos, localização ou microfone." },
-      { "t": "Crianças", "p": "O jogo não pede dados pessoais a ninguém, inclusive crianças." },
-      { "t": "Mudanças", "p": "Se esta política mudar, a data no topo desta página será atualizada." }
+      {
+        "t": "O que fica no aparelho",
+        "p": "Recordes (por rota e sentido), pontos, conchas, missões e nível, coleção, Vela do mês e ajustes (idioma, volumes, vibração) ficam salvos localmente no iPhone. Se você apagar o app, esses dados são apagados junto."
+      },
+      {
+        "t": "Anúncios recompensados",
+        "p": "Os anúncios são opcionais e só aparecem quando você escolhe assistir: para ganhar +10 s de sol, dobrar conchas ou avançar na Vela do mês. Eles são exibidos pelo Google AdMob, que pode coletar dados do aparelho conforme a própria política e usar o identificador de publicidade só se você permitir o rastreamento quando o iOS perguntar. Onde a lei exige, o jogo pede o seu consentimento, e você pode mudar a escolha em Ajustes › Opções de anúncios."
+      },
+      {
+        "t": "Compras",
+        "p": "A Loja ainda não abriu. Quando abrir, as compras serão feitas pela App Store: o pagamento é processado pela Apple e o jogo recebe só a confirmação, para liberar o item e permitir restaurá-lo."
+      },
+      {
+        "t": "Game Center",
+        "p": "Ainda não está no jogo. Quando chegar, só se você conectar o Game Center a Apple receberá seus recordes para placares e conquistas, conforme a política de privacidade da Apple."
+      },
+      {
+        "t": "O que não fazemos",
+        "p": "Não vendemos dados, não criamos perfis e não pedimos acesso a fotos, contatos, localização ou microfone."
+      },
+      {
+        "t": "Crianças",
+        "p": "O jogo não pede dados pessoais a ninguém, inclusive crianças."
+      },
+      {
+        "t": "Mudanças",
+        "p": "Se esta política mudar, a data no topo desta página será atualizada."
+      }
     ],
-    "ask": "Dúvidas sobre privacidade?", "email": "Enviar e-mail", "subject": "Maré Alta · Privacidade"
+    "ask": "Dúvidas sobre privacidade?",
+    "email": "Enviar e-mail",
+    "subject": "Maré Alta · Privacidade"
   }
 }

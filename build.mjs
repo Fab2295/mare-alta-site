@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync } f
 import { build } from 'esbuild';
 
 const SITE = process.env.SITE_URL || 'https://fab2295.github.io/mare-alta-site/';
-const EMAIL = 'suporte@marealta.app';
+const EMAIL = 'mare-alta@gmail.com'; // same as Support.email in the game
 const OUT = 'docs';
 const langs = ['pt', 'en', 'es'].map((k) => ({ key: k, ...JSON.parse(readFileSync(`src/i18n/${k}.json`, 'utf8')) }));
 
@@ -93,7 +93,6 @@ function footerLinks(l, rel, items) {
 // ---- pages
 function home(l) {
   const rel = '../'.repeat(depth(l, 'home')), h = l.home, a = `${rel}assets/`;
-  const dots = ['#E4553B', '#E4553B', '#FFC93C', '#8A8198', '#8A8198'];
   const shot = (n, alt, cls = '') => `<div class="device ${cls}" data-reveal><img src="${a}${n}.webp" width="924" height="427" alt="${esc(alt)}" loading="lazy" decoding="async"></div>`;
   return head(l, 'home', rel, h) + `
 <body>
@@ -124,9 +123,15 @@ ${nav(l, 'home', rel)}
     <div class="card-t"><h3>${c.title}</h3><p>${c.text}</p></div></div>`).join('')}</div>
 </div></section>
 
+<section class="sheet sec"><div class="wrap">
+  <div class="copy"><div class="eyebrow">${h.sea.eyebrow}</div><h2 class="h">${h.sea.title}</h2></div>
+  <div class="feats">${h.sea.items.map((f) => `<div class="feat" data-reveal><h3>${f.t}</h3><p>${f.p}</p></div>`).join('')}</div>
+</div></section>
+
 <section id="litoral" class="sheet sec"><div class="wrap split">
-  <div class="copy"><div class="eyebrow">${h.coast.eyebrow}</div><h2 class="h">${h.coast.title}</h2>
-    <ul class="stops">${h.coast.stops.map((s, i) => `<li><span class="dot" style="--c:${dots[i]}"></span>${s}</li>`).join('')}</ul></div>
+  <div class="copy"><div class="eyebrow">${h.coast.eyebrow}</div><h2 class="h">${h.coast.title}</h2><p class="lead">${h.coast.text}</p>
+    <ol class="stops">${h.coast.stops.map((s, i) => `<li><span class="dot"${i === 0 || i === h.coast.stops.length - 1 ? ' data-end' : ''}></span>${s}</li>`).join('')}</ol>
+    <p class="note">${h.coast.europe}</p></div>
   ${shot('mapa', h.coast.alt)}
 </div></section>
 

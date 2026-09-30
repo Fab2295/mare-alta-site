@@ -1,50 +1,214 @@
 {
-  "code": "en", "short": "EN", "name": "English", "og": "en_US", "dir": "en/",
-  "slugs": { "support": "support", "privacy": "privacy" },
-  "nav": { "game": "The game", "coast": "Coast", "collection": "Collection", "support": "Support", "privacy": "Privacy", "download": "Download", "home": "Home", "language": "Language", "skip": "Skip to content" },
+  "code": "en",
+  "short": "EN",
+  "name": "English",
+  "og": "en_US",
+  "dir": "en/",
+  "slugs": {
+    "support": "support",
+    "privacy": "privacy"
+  },
+  "nav": {
+    "game": "The game",
+    "coast": "Coast",
+    "collection": "Collection",
+    "support": "Support",
+    "privacy": "Privacy",
+    "download": "Download",
+    "home": "Home",
+    "language": "Language",
+    "skip": "Skip to content"
+  },
   "home": {
     "title": "Maré Alta · As far as the sun allows",
-    "description": "A jangada sailing game for iPhone: sail Brazil's northeastern coast, collect shells and go as far as the sun allows. Free to play.",
+    "description": "A jangada game for iPhone: ride the waves of Brazil's northeastern coast from Porto de Galinhas to Jericoacoara, dodge the shark and go as far as the sun allows. Free to play.",
     "tagline": "As far as the sun allows.",
-    "cta": "Download on the App Store", "badge": "iPhone · iOS",
-    "game": { "eyebrow": "The game", "title": "The scenery is the game.", "text": "Just distance, shells, the sun as a clock, and the pause. A shark fin shows up ahead as a warning.", "alt": "A run in progress", "hint": "Played with the iPhone in landscape" },
-    "landing": { "title": "Every landing counts.", "cards": [
-      { "img": "perfeito", "title": "Perfect!", "text": "The most rewarding moment: splash, sparkle and combo. It lines up with the landing haptics." },
-      { "img": "por-um-fio", "title": "Close call!", "text": "Bonus for skimming past the shark; the buoy winds the sun's clock back." },
-      { "img": "trombada", "title": "Crash!", "text": "A clear but comical hit: coral border, the jangada wobbles, you lose seconds of sun." } ] },
-    "coast": { "eyebrow": "Coast map", "title": "From Porto de Galinhas to Jericoacoara.", "alt": "Coast map", "stops": ["Porto de Galinhas", "Olinda", "Itamaracá", "Pipa", "Jericoacoara"] },
-    "collection": { "eyebrow": "Collection and shop", "title": "Sails and jangadas.", "text": "Earned ones in colour; locked ones as silhouettes, showing whether they unlock with shells or in the shop.", "alt": "Collection", "freeTitle": "Free to play.", "freeText": "You only pay if you want a sail or jangada skin. Nothing changes in the run.", "tag": "Optional skins" },
-    "end": { "eyebrow": "The sun has set", "title": "Play again.", "text": "\"Play again\" takes centre stage; +10 s of sun and double shells as options; share.", "alt": "End of a run" },
-    "footer": { "title": "Can you go farther?", "icon": "Maré Alta icon" }
+    "cta": "Download on the App Store",
+    "badge": "iPhone · iOS",
+    "game": {
+      "eyebrow": "The game",
+      "title": "The scenery is the game.",
+      "text": "Hold to dive down the wave, let go to fly off the next one. A quick tap does a little hop. The sun is your clock: buoys and stops give you more time, and a fin up ahead warns you of the shark.",
+      "alt": "A run in progress",
+      "hint": "Played with the iPhone in landscape"
+    },
+    "landing": {
+      "title": "Every landing counts.",
+      "cards": [
+        {
+          "img": "perfeito",
+          "title": "Perfect!",
+          "text": "Land right on the downslope of a wave: splash, sparkle, shells and a buzz from your iPhone."
+        },
+        {
+          "img": "por-um-fio",
+          "title": "Close call!",
+          "text": "Skim past the shark and take the bonus. Every shark you dodge is counted at the end of the run."
+        },
+        {
+          "img": "trombada",
+          "title": "Crash!",
+          "text": "Hit the shark? The jangada wobbles and you lose seconds of sun."
+        }
+      ]
+    },
+    "coast": {
+      "eyebrow": "Coast map",
+      "title": "From Porto de Galinhas to Jericoacoara.",
+      "alt": "Coast map",
+      "stops": [
+        "Porto de Galinhas",
+        "Cabo de Santo Agostinho",
+        "Boa Viagem",
+        "Marco Zero",
+        "Olinda",
+        "Pau Amarelo",
+        "Itamaracá",
+        "João Pessoa",
+        "Baía da Traição",
+        "Pipa",
+        "Natal",
+        "São Miguel do Gostoso",
+        "Canoa Quebrada",
+        "Fortaleza",
+        "Cumbuco",
+        "Jericoacoara"
+      ],
+      "text": "16 stops, one every km, each with its own skyline in the afternoon, at sunset and at night. Every stop gives +8 s of sun. The direction is drawn at random each run, and each way has its own record.",
+      "europe": "Europe route: 11 stops, from Portugal to Greece. Coming with the Shop."
+    },
+    "collection": {
+      "eyebrow": "Collection",
+      "title": "Sails and jangadas.",
+      "text": "Chita and Cordel unlock as you level up; Renda de bilro and Azulejo with shells. Plus over 40 Shop sails in sets: Under the Sea, Animals of Brazil, Flags and Northeast States.",
+      "alt": "Collection",
+      "freeTitle": "Free to play.",
+      "freeText": "Ads only when you want them: +10 s of sun or double shells at the end of a run. And every month one Shop sail unlocks by watching 3 ads.",
+      "tag": "Sail of the month"
+    },
+    "end": {
+      "eyebrow": "The sun has set",
+      "title": "Play again.",
+      "text": "See your distance, points, sharks dodged and shells. Want a little more? One ad gives +10 s of sun or doubles your shells. Or share your result.",
+      "alt": "End of a run"
+    },
+    "footer": {
+      "title": "Can you go farther?",
+      "icon": "Maré Alta icon"
+    },
+    "sea": {
+      "eyebrow": "At sea",
+      "title": "There's always something coming.",
+      "items": [
+        {
+          "t": "Gulls",
+          "p": "They show up at three heights after the first 900 m. Read their flight before you jump."
+        },
+        {
+          "t": "Golden buoy",
+          "p": "Buoys give +3 s of sun. The golden one, rare and only after 5 km, gives +9 s."
+        },
+        {
+          "t": "Air time",
+          "p": "Every second in the air turns into points when you splash down. Big air is worth +50."
+        },
+        {
+          "t": "Maré Alta!",
+          "p": "Chain perfect landings and shells count double for a while."
+        },
+        {
+          "t": "Missions",
+          "p": "Three missions per level. Levelling up unlocks new sails in the Collection."
+        },
+        {
+          "t": "Baião and the sea",
+          "p": "Baião music and the sound of the sea, with separate effects and music volume in Settings."
+        }
+      ]
+    }
   },
   "support": {
-    "title": "Support · Maré Alta", "description": "Help with Maré Alta: purchases, ads, language, sound and Game Center.",
-    "h1": "Support", "sub": "Questions about the game, purchases and settings.",
+    "title": "Support · Maré Alta",
+    "description": "Help with Maré Alta: ads, sail of the month, collection, routes, language and sound.",
+    "h1": "Support",
+    "sub": "Questions about the game, purchases and settings.",
     "faq": [
-      { "q": "How do I restore the Jangadeiro Pass?", "a": "Open Settings and tap Restore purchases, using the same Apple ID as the purchase. The pass is a one-time purchase and comes back without charging you again." },
-      { "q": "What does the Jangadeiro Pass include?", "a": "No ads between runs, +10 s of sun without watching an ad, and double shells without an ad." },
-      { "q": "Are ads mandatory?", "a": "Rewarded ads are always optional: at the end of a run you choose whether you want +10 s of sun or double shells. \"Play again\" stays the main button." },
-      { "q": "How do I change the language?", "a": "In Settings, choose Português or English." },
-      { "q": "How do I turn off sound, music or haptics?", "a": "Settings has one switch for Sound effects, one for Music and one for Haptics." },
-      { "q": "How do I connect to Game Center?", "a": "In Settings, tap Game Center. The connection uses your Apple account." },
-      { "q": "Where are my sails and jangadas?", "a": "In the Collection. Earned ones show in colour; locked ones show as silhouettes, indicating whether they unlock with shells or in the shop." }
+      {
+        "q": "Are ads mandatory?",
+        "a": "No. They only show when you choose: at the end of a run, for +10 s of sun or double shells, and for the Sail of the month. \"Play again\" stays the main button."
+      },
+      {
+        "q": "What is the Sail of the month?",
+        "a": "On the 1st of every month the game picks a Shop sail that unlocks by watching 3 ads. It shows at the top of the Collection and in the menu. Progress is saved: if the month ends first, you pick up where you left off when it comes back."
+      },
+      {
+        "q": "How do I get sails and jangadas?",
+        "a": "In the Collection: Chita at level 2, Cordel at level 4, Renda de bilro for 300 shells and Azulejo for 500. Shop sails show a lock until the Shop opens."
+      },
+      {
+        "q": "How do I level up?",
+        "a": "Each level has 3 missions, shown in the menu. Complete all three to level up."
+      },
+      {
+        "q": "Why does a run sometimes start in Jericoacoara?",
+        "a": "The direction is drawn at random each run: from Porto de Galinhas towards Jericoacoara, or the way back. Each direction has its own record on the Map."
+      },
+      {
+        "q": "How do I change the language?",
+        "a": "In Settings, choose Português, English or Español. On first launch the game follows your iPhone's language."
+      },
+      {
+        "q": "How do I adjust sound, music or haptics?",
+        "a": "Settings has volume for Sound effects and for Music, and a switch for Haptics. While paused, the gear opens Settings."
+      },
+      {
+        "q": "Is there Game Center or in-app purchases?",
+        "a": "Not yet. Game Center, the Shop and Restore purchases are coming in a future update."
+      }
     ],
-    "contactTitle": "Get in touch", "contactText": "Tell us your iPhone model, your iOS version and what happened. A screenshot helps.",
-    "email": "Send email", "subject": "Maré Alta · Support"
+    "contactTitle": "Get in touch",
+    "contactText": "Tell us your iPhone model, your iOS version and what happened. A screenshot helps.",
+    "email": "Send email",
+    "subject": "Maré Alta · Support"
   },
   "privacy": {
-    "title": "Privacy · Maré Alta", "description": "Maré Alta privacy policy: no account, no login, progress stays on your iPhone.",
-    "h1": "Privacy", "sub": "Updated September 2026.",
+    "title": "Privacy · Maré Alta",
+    "description": "Maré Alta privacy policy: no account, progress stays on your iPhone, optional Google AdMob ads.",
+    "h1": "Privacy",
+    "sub": "Updated September 2026.",
     "intro": "Maré Alta doesn't ask for an account, an email or a login. Your progress is stored on the iPhone itself.",
     "sections": [
-      { "t": "What stays on the device", "p": "Distance, best run, shells, coast stretches, collection and settings (language, sound, music, haptics) are saved locally on the iPhone. If you delete the app, that data is deleted with it." },
-      { "t": "Game Center", "p": "If you connect Game Center in Settings, Apple receives your best run for leaderboards and achievements, under Apple's privacy policy. If you don't connect it, nothing is sent." },
-      { "t": "Purchases", "p": "The Jangadeiro Pass and shop items are bought through the App Store. Apple processes the payment; the game only receives the purchase confirmation, to unlock the item and let you restore it." },
-      { "t": "Rewarded ads", "p": "Ads are optional and only appear when you choose to watch one to get +10 s of sun or double shells. They are served by Google AdMob, which may collect device data under its own policy. If iOS asks for tracking permission, you can decline and keep playing." },
-      { "t": "What we don't do", "p": "We don't sell data, we don't build profiles, and we don't ask for access to photos, contacts, location or microphone." },
-      { "t": "Children", "p": "The game doesn't ask anyone for personal data, children included." },
-      { "t": "Changes", "p": "If this policy changes, the date at the top of this page will be updated." }
+      {
+        "t": "What stays on the device",
+        "p": "Records (per route and direction), points, shells, missions and level, collection, Sail of the month and settings (language, volumes, haptics) are saved locally on the iPhone. If you delete the app, that data is deleted with it."
+      },
+      {
+        "t": "Rewarded ads",
+        "p": "Ads are optional and only show when you choose to watch one: to get +10 s of sun, double shells or progress the Sail of the month. They are served by Google AdMob, which may collect device data under its own policy and only uses the advertising identifier if you allow tracking when iOS asks. Where the law requires it, the game asks for your consent, and you can change your choice in Settings › Ad options."
+      },
+      {
+        "t": "Purchases",
+        "p": "The Shop isn't open yet. When it opens, purchases will go through the App Store: Apple processes the payment and the game only receives the confirmation, to unlock the item and let you restore it."
+      },
+      {
+        "t": "Game Center",
+        "p": "Not in the game yet. When it arrives, Apple will only receive your records for leaderboards and achievements if you connect Game Center, under Apple's privacy policy."
+      },
+      {
+        "t": "What we don't do",
+        "p": "We don't sell data, we don't build profiles, and we don't ask for access to photos, contacts, location or microphone."
+      },
+      {
+        "t": "Children",
+        "p": "The game doesn't ask anyone for personal data, children included."
+      },
+      {
+        "t": "Changes",
+        "p": "If this policy changes, the date at the top of this page will be updated."
+      }
     ],
-    "ask": "Questions about privacy?", "email": "Send email", "subject": "Maré Alta · Privacy"
+    "ask": "Questions about privacy?",
+    "email": "Send email",
+    "subject": "Maré Alta · Privacy"
   }
 }
